@@ -1,0 +1,212 @@
+/* :root {
+
+} */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding: 15px;
+}
+
+.container {
+    position: relative;
+    padding: 15px;
+    height: 100%;
+    background-color: aliceblue;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: hidden;
+}
+
+.root {
+    .fill-node();
+    .large();
+    .flex();
+    .flex-center();
+    .cursor-default();
+
+    position: relative;
+
+    .title-vertical-line {
+        .line-utils();
+        top: 100%;
+        height: 30px;
+        width: 3px;
+
+        .title-bottom-horizontal-line {
+            .line-utils();
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 3px;
+
+            .level2-vertical-line {
+                .line-utils();
+                top: 0;
+                // left: 50%;
+                width: 3px;
+                height: 30px;
+            }
+        }
+    }
+
+}
+
+.level2 {
+    .fill-node();
+    .medium();
+    .flex();
+    .flex-center();
+    .round();
+    .cursor-default();
+    position: absolute;
+    top: 100%;
+    left: -100px;
+
+    .level3-vertical-line {
+        .line-utils();
+        top: 100%;
+        width: 3px;
+
+        .level3-horizontal-line {
+            .line-utils();
+            // left: 100%;
+            width: 30px;
+            height: 3px;
+        }
+    }
+}
+
+.level3 {
+    .coreless-node();
+    .small();
+    .flex();
+    .flex-center();
+    .round();
+    .cursor-default();
+
+    position: absolute;
+    left: 100%;
+    top: -19px;
+}
+
+// 导出功能
+.export {
+    position: fixed;
+    right: -10px;
+    top: 20px;
+    cursor: default;
+    padding-right: 5px !important;
+    background: white;
+    display: flex;
+    justify-content: right;
+    width: 40px;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        width: 100px;
+        right: 0;
+    }
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.compatibility-html2canvas {
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+}
+
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+    width: 28px;
+    cursor: pointer;
+}
+
+
+/* line工具查询器 */
+.line-utils {
+    position: absolute;
+    background-color: #A3271F;
+}
+
+
+/* 节点填充 */
+.fill-node {
+    background-color: #A3271F;
+    color: #FFFFFF;
+}
+
+.coreless-node {
+    border: 1px solid #A3271F;
+    background-color: #FFFFFF;
+    color: #A3271F;
+}
+
+
+
+/* flex布局默认配置 */
+.flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.flex-center {
+    .justify-content-center();
+    align-items: center;
+}
+
+
+
+/* 元素大小 */
+.large {
+    width: 240px;
+    height: 40px;
+}
+
+.medium {
+    width: 200px;
+    height: 40px;
+}
+
+.small {
+    width: 105px;
+    height: 40px;
+}
+
+/* 圆角化 */
+.round {
+    border-radius: 5px;
+}
+
+/* 外边距 */
+.margin {
+    margin: 5px;
+}
+
+/* 指针 */
+.cursor-default {
+    cursor: default;
+}
