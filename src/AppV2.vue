@@ -7,9 +7,12 @@
         <!-- root -->
         <div v-if="data && data.id != undefined" class="root">
             {{ data.label != undefined && data.label }}
-            <el-tooltip class="box-item" effect="dark" :content="data.value" placement="top">
-                <div v-if="enableMask" class="large mask" />
-            </el-tooltip>
+            <div v-if="enableMask" class="large mask" @mouseenter="(e) => {
+                buttonRef = e.currentTarget;
+                visible = true;
+                updateTooltip(data.value);
+                showTooltipTimeout();
+            }" @mouseleave="hideTooltipTimeout" />
             <!-- title-vertical-line -->
             <div v-if="data.children && data.children.length != 0" class="title-vertical-line">
                 <!-- title-horizontal-line -->
@@ -20,10 +23,12 @@
                         <!-- level2 element -->
                         <div v-if="data.children[index] && data.children[index].id != undefined" class="level2">
                             {{ data.children[index].label != undefined && data.children[index].label }}
-                            <el-tooltip class="box-item" effect="dark" :content="data.children[index].value"
-                                placement="top">
-                                <div v-if="enableMask" class="medium mask" />
-                            </el-tooltip>
+                            <div v-if="enableMask" class="medium mask" @mouseenter="(e) => {
+                                buttonRef = e.currentTarget;
+                                visible = true;
+                                updateTooltip(data.children[index].value);
+                                showTooltipTimeout();
+                            }" @mouseleave="hideTooltipTimeout" />
 
                             <!-- 5 * 40 - 20 + 20 * 4 + 30 -->
                             <!-- level3-vertical-line -->
@@ -37,10 +42,12 @@
                                     <div class="level3">
                                         {{ data.children[index].children[indexTwo].label != undefined &&
                                             data.children[index].children[indexTwo].label }}
-                                        <el-tooltip class="box-item" effect="dark"
-                                            :content="data.children[index].children[indexTwo].value" placement="top">
-                                            <div v-if="enableMask" class="small mask" />
-                                        </el-tooltip>
+                                        <div v-if="enableMask" class="small mask" @mouseenter="(e) => {
+                                            buttonRef = e.currentTarget;
+                                            visible = true;
+                                            updateTooltip(data.children[index].children[indexTwo].value);
+                                            showTooltipTimeout();
+                                        }" @mouseleave="hideTooltipTimeout" />
                                     </div>
                                 </div>
                             </div>
@@ -58,6 +65,21 @@
             <use xlink:href="#icon-daochu"></use>
         </svg>
     </el-button>
+    <el-tooltip ref="tooltipRef" :visible="visible" placement="top" :popper-options="{
+        modifiers: [
+            {
+                name: 'computeStyles',
+                options: {
+                    adaptive: false,
+                    enabled: false,
+                },
+            },
+        ],
+    }" :virtual-ref="buttonRef" virtual-triggering popper-class="singleton-tooltip">
+        <template #content>
+            <span> {{ tooltipContent }} </span>
+        </template>
+    </el-tooltip>
 </template>
 <script setup>
 import { ref } from 'vue';
@@ -76,6 +98,29 @@ const titleBottomHorLineWidth = ref((level2Len.value - 1) * 200 + (level2Len.val
 const level2Datas = ref(data.value.children)
 
 const enableMask = ref(true)
+
+const buttonRef = ref()
+const tooltipRef = ref()
+
+const visible = ref(false)
+
+const tooltipContent = ref('')
+
+let visibleTimeout = undefined
+
+const updateTooltip = (content) => {
+    tooltipContent.value = content
+}
+
+const hideTooltipTimeout = () => {
+    visibleTimeout === undefined && (() => { visibleTimeout = setTimeout(() => { visible.value = false; visibleTimeout = undefined }, 2000); })()
+}
+
+const showTooltipTimeout = () => {
+    visibleTimeout !== undefined && clearTimeout(visibleTimeout)
+    visibleTimeout = undefined
+}
+
 
 const changeData = (val) => {
     data.value = val
@@ -113,4 +158,8 @@ const requestNetworkData = () => {
 }
 
 </script>
-<style></style>
+<style>
+.singleton-tooltip {
+    transition: transform 0.3s cubic-bezier(.23, 1, .32, 1);
+}
+</style>
