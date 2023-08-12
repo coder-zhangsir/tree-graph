@@ -1,6 +1,11 @@
-/* :root {
+/* Default CSS variable configuration */
+@primary-color: black;
+@secondary-color: black;
+@node-border: 1px;
+@node2node-thickness: 3px;
+@customNode-img-size: 40%;
 
-} */
+/* ---------------------------------------------------------------- */
 * {
     box-sizing: border-box;
 }
@@ -24,6 +29,14 @@ body {
     overflow: hidden;
 }
 
+.dragAndZoom {
+    .flex();
+    .justify-content-center();
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .root {
     .fill-node();
     .large();
@@ -37,19 +50,19 @@ body {
         .line-utils();
         top: 100%;
         height: 30px;
-        width: 3px;
+        width: @node2node-thickness;
 
         .title-bottom-horizontal-line {
             .line-utils();
             bottom: 0;
             transform: translateX(-50%);
-            height: 3px;
+            height: @node2node-thickness;
 
             .level2-vertical-line {
                 .line-utils();
                 top: 0;
                 // left: 50%;
-                width: 3px;
+                width: @node2node-thickness;
                 height: 30px;
             }
         }
@@ -71,18 +84,46 @@ body {
     .level3-vertical-line {
         .line-utils();
         top: 100%;
-        width: 3px;
+        left: 10px;
+        width: @node2node-thickness;
 
         .level3-horizontal-line {
             .line-utils();
             // left: 100%;
             width: 30px;
-            height: 3px;
+            height: @node2node-thickness;
         }
     }
 }
 
 .level3 {
+    .fill-node();
+    .small();
+    .flex();
+    .flex-center();
+    .round();
+    .cursor-default();
+
+    position: absolute;
+    left: 100%;
+    top: -8px;
+
+    .level4-vertical-line {
+        .line-utils();
+        top: 100%;
+        left: 10px;
+        width: @node2node-thickness;
+
+        .level4-horizontal-line {
+            .line-utils();
+            // left: 100%;
+            width: 30px;
+            height: @node2node-thickness;
+        }
+    }
+}
+
+.level4 {
     .coreless-node();
     .small();
     .flex();
@@ -92,7 +133,34 @@ body {
 
     position: absolute;
     left: 100%;
-    top: -19px;
+    top: -8px;
+
+    .level5-vertical-line {
+        .line-utils();
+        top: 100%;
+        left: 10px;
+        width: @node2node-thickness;
+
+        .level5-horizontal-line {
+            .line-utils();
+            // left: 100%;
+            width: 30px;
+            height: @node2node-thickness;
+        }
+    }
+}
+
+.level5 {
+    .coreless-node();
+    .small();
+    .flex();
+    .flex-center();
+    .round();
+    .cursor-default();
+
+    position: absolute;
+    left: 100%;
+    top: -8px;
 }
 
 // 导出功能
@@ -119,6 +187,21 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+        width: @customNode-img-size;
+        border-radius: 50%;
+        margin-bottom: 8px;
+    }
+
+    p {
+        white-space: nowrap;
+    }
 }
 
 .compatibility-html2canvas {
@@ -146,20 +229,20 @@ body {
 /* line工具查询器 */
 .line-utils {
     position: absolute;
-    background-color: #A3271F;
+    background-color: @primary-color;
 }
 
 
 /* 节点填充 */
 .fill-node {
-    background-color: #A3271F;
+    background-color: @primary-color;
     color: #FFFFFF;
 }
 
 .coreless-node {
-    border: 1px solid #A3271F;
+    border: @node-border solid @primary-color;
     background-color: #FFFFFF;
-    color: #A3271F;
+    color: @primary-color;
 }
 
 
