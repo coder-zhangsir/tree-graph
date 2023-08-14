@@ -999,12 +999,20 @@ const successMessage = (msg) => {
 }
 // 导出png图片
 const exportPng = () => {
-    // console.log('export png')
-    var node = document.querySelector('.container');
+    const node = document.querySelector('.container');
+    node.style.overflow = 'unset'
 
-    domtoimage.toBlob(node).then(function (blob) {
+    const box = node.style.boxShadow
+    node.style.boxShadow = 'none'
+
+    const dragAndZoom = document.querySelector('.dragAndZoom')
+    dragAndZoom.style.transform = 'scale(1) translate(0px, 0px)'
+
+    domtoimage.toBlob(node, { bgcolor: '#F1F8FE' }).then(function (blob) {
         saveAs(blob, 'file.png');
         successMessage('Export successfully.');
+        node.style.overflow = 'hidden'
+        node.style.boxShadow = box
     });
 }
 
