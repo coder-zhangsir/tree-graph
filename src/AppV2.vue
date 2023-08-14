@@ -117,7 +117,8 @@
                                                                 class="level5-horizontal-line"
                                                                 :style="[lineWidthConfig.level5_horizontal_line[index][indexTwo][indexThree][indexFour]]">
                                                                 <!-- level5 element -->
-                                                                <div class="level5" style="border: 0">
+                                                                <div class="level5"
+                                                                    :style="[nodeStyle[4][index][indexTwo][indexThree][indexFour], { border: 0 }]">
                                                                     <div v-if="enableMask" class="small mask level5"
                                                                         :style="[nodeStyle[4][index][indexTwo][indexThree][indexFour], { top: 0 }]"
                                                                         @mouseenter="(e) => {
@@ -182,12 +183,12 @@
     </el-tooltip>
 
     <!-- Test ChangeData -->
-    <!-- <el-button round size="large" type="primary" @click.once="() => { changeData() }">ChangeData</el-button> -->
+    <el-button round size="large" type="primary" @click.once="() => { changeData() }">ChangeData</el-button>
 </template>
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { _data } from './assets/help/localData'
-import './assets/less/tree.less?'
+import './assets/css/tree.css'
 import axios from 'axios'
 /* in ES 6 */
 import domtoimage from 'dom-to-image';
@@ -377,7 +378,7 @@ const calculatedLineWidth = () => {
 
     // 计算标题下面垂直线和水平线的宽高
     if (level2NodeExists) {
-        lwc.title_vertical_line = { width: '3px', height: '30px' }
+        lwc.title_vertical_line = { height: '30px' }
 
         // 计算
         const widthByEveryChildren = () => {
@@ -397,13 +398,11 @@ const calculatedLineWidth = () => {
                         return `-${Math.round(convertWHToInt(ele.width) / 2)}px`
                 })() || '-100px'
             })
-            // console.log(addition)
-            return Math.round(addition /= 3)
+            return Math.round(addition /= d.children.length)
         }
 
         lwc.title_horizontal_line = {
-            width: (d.children.length - 1) * widthByEveryChildren() + (d.children.length - 1) * 20 + 'px',
-            height: 3 + 'px'
+            width: (d.children.length - 1) * widthByEveryChildren() + (d.children.length - 1) * 20 + 'px'
         }
     }
 
@@ -416,32 +415,43 @@ const calculatedLineWidth = () => {
 
             lwc.level2_vertical_line[index2] = {
                 left: (1.0 / (level2D.length - 1)) * 100 * index2 + '%',
-                width: 3 + 'px',
                 height: 30 + 'px'
             }
 
 
 
+            let ele3AllH = []
+            // let tempForEle3H = 0
+            lwc.level3_horizontal_line[index2] === undefined && (() => lwc.level3_horizontal_line[index2] = [])()
+            level3D?.forEach((ele3, index3) => {
+                if (ele3AllH[index3] === undefined) ele3AllH[index3] = 0
+                if (index3 === 0) ele3AllH[index3] += 20
+                ele3AllH[index3] += 20
+                ele3AllH[index3] += ele3AllH[index3 - 1] || 0
+
+                ele3AllH[index3] += convertWHToInt(ele3.height || 40)
+                if (!state[2][index2][index3]) return
+
+                ele3.children?.forEach((ele4, index4) => {
+                    ele3AllH[index3] += 20
+                    ele3AllH[index3] += convertWHToInt(ele4.height || 40)
+                    if (!state[3][index2][index3][index4]) return
+
+                    ele4.children?.forEach((ele5, index5) => {
+                        ele3AllH[index3] += 20
+                        ele3AllH[index3] += convertWHToInt(ele5.height || 40)
+                    })
+                })
+            })
+
+
             // level3 垂直线长度
             lwc.level3_vertical_line[index2] = {
-                width: 3 + 'px',
                 height: (() => {
-                    // e.children.length * 40 - 20 + 20 * (e.children.length - 1)
-                    let h = 20 * (e.children.length - 1)
-                    level3D.forEach((ele, index3) => {
-                        h += convertWHToInt(ele.height || 40)
-                    })
-                    h -= 20
-
-                    // 上面计算没问题
-
                     // 扩展level4高度
                     const checkLevel4NodeExists = () => {
-                        let level4H = 0
                         // 检测是否有level4的节点
-                        level3D.forEach((ele, index3) => {
-                            // console.log(ele)
-                            // 收集data中对level3节点的样式并应用
+                        level3D?.forEach((ele, index3) => {
                             node[2] === undefined && (() => node[2] = [])()
                             node[2][index2] === undefined && (() => node[2][index2] = [])()
                             node[2][index2][index3] === undefined && (() => node[2][index2][index3] = {})()
@@ -449,26 +459,7 @@ const calculatedLineWidth = () => {
                             node[2][index2][index3].height = (convertWHToInt(ele.height) || 40) + 'px'
                             node[2][index2][index3].backgroundColor = ele.backgroundColor || ''
 
-
-                            // 遍历level4节点
-                            // 检测是否有level4节点，并返回对应值，这里20是多出与后面节点相隔的
-                            let temp = (() => {
-                                if (ele.children) return 20
-                                else return 0
-                            })()
                             ele.children?.forEach((ele4, index4) => {
-                                // if (index2 === 1) console.log(convertWHToInt(ele4.height || 40))
-                                temp += convertWHToInt(ele4.height || 40)
-                                // if (index2 === 1) console.log(temp)
-                                if (index4 != ele.children.length - 1) {
-                                    temp += 20
-                                }
-                                // 如果当前level4节点被隐藏，将不再显示
-                                if (state[2][index2][index3] === false) temp = 0
-
-                                // 如果是level3中最后一个节点检测出有level4级别节点，那么这个时候将不再添加到这里面去
-                                if (index3 === level3D.length - 1) temp = 0
-
                                 // 收集data中对level4节点的样式并应用
                                 node[3] === undefined && (() => node[3] = [])()
                                 node[3][index2] === undefined && (() => node[3][index2] = [])()
@@ -479,26 +470,7 @@ const calculatedLineWidth = () => {
                                 node[3][index2][index3][index4].backgroundColor = ele4.backgroundColor || ''
 
 
-                                let temp2 = (() => {
-                                    if (ele4.children) return 20
-                                    else return 0
-                                })()
-
                                 ele4.children?.forEach((ele5, index5) => {
-                                    // if (index2 === 0) console.log(convertWHToInt(ele5.height || 40))
-                                    temp2 += convertWHToInt(ele5.height || 40)
-                                    if (index5 != ele4.children.length - 1) {
-                                        temp2 += 20
-                                    }
-                                    // 如果当前level4节点被隐藏，将不再显示
-                                    // 当用户直接隐藏level4节点而不在乎level5，那么此时其level4内部的节点不会占用高度
-                                    if (state[3][index2][index3][index4] === false || (state[2][index2][index3] === false && state[3][index2][index3][index4])) temp2 = 0
-
-                                    // 如果是level4中最后一个节点检测出有level5级别节点，那么这个时候将不再添加到这里面去
-                                    if (index4 === level3D.length - 1) temp2 = 0
-
-
-
                                     // 收集data中对level5节点的样式并应用
                                     node[4] === undefined && (() => node[4] = [])()
                                     node[4][index2] === undefined && (() => node[4][index2] = [])()
@@ -509,63 +481,21 @@ const calculatedLineWidth = () => {
                                     node[4][index2][index3][index4][index5].height = (convertWHToInt(ele5.height) || 40) + 'px'
                                     node[4][index2][index3][index4][index5].backgroundColor = ele5.backgroundColor || ''
                                 })
-                                level4H += temp2
                             })
-                            level4H += temp
                         })
-                        return level4H
                     }
-                    h += checkLevel4NodeExists()
-
-                    h += 'px'
-                    return h
+                    checkLevel4NodeExists()
+                    
+                    return (ele3AllH[ele3AllH.length - 2] || 20) + 'px'
                 })()
             }
 
+
             // level3 水平线长度
-            let ele3AllH = 0
-            let tempForEle3H = 0
-            lwc.level3_horizontal_line[index2] === undefined && (() => lwc.level3_horizontal_line[index2] = [])()
-            level3D.forEach((ele3, index3) => {
+            level3D?.forEach((ele3, index3) => {
                 lwc.level3_horizontal_line[index2][index3] = {
-                    height: 3 + 'px',
                     top: (() => {
-                        // if (index3 != level3D.length - 1) ele3AllH += 20
-                        ele3AllH += 20
-                        if (index3 !== 0) {
-                            if (tempForEle3H !== 0) {
-                                ele3AllH += tempForEle3H
-                                tempForEle3H = 0
-                            }
-                            else ele3AllH += convertWHToInt(ele3.height || 40)
-
-                        }
-                        if (convertWHToInt(ele3.height || 40) !== 40) tempForEle3H += convertWHToInt(ele3.height || 40)
-
-
-                        let ele4AllH = 0
-                        ele3.children?.forEach((ele4, index4) => {
-                            if (state[2][index2][index3] === false) return
-                            ele4AllH += 20
-                            ele4AllH += convertWHToInt(ele4.height || 40)
-
-                            let ele5AllH = 0
-                            ele4.children?.forEach((ele5, index5) => {
-                                if (state[3][index2][index3][index4] === false) return
-                                ele5AllH += 20
-                                ele5AllH += convertWHToInt(ele5.height || 40)
-                            })
-                            ele4AllH += ele5AllH
-                        })
-
-
-                        return ele3AllH + (() => {
-                            // calculated ele4AllH
-                            ele3AllH += ele4AllH
-                            // if (index3 === 0) return 0
-                            // else return ele4AllH
-                            return 0
-                        })() + 'px'
+                        return (ele3AllH[index3 - 1] || 20) + 'px'
                     })()
                 }
             })
@@ -574,12 +504,11 @@ const calculatedLineWidth = () => {
 
 
             // level4 垂直线条
-            level3D.forEach((ele3, index3) => {
+            level3D?.forEach((ele3, index3) => {
                 lwc.level4_vertical_line[index2] === undefined && (() => lwc.level4_vertical_line[index2] = [])()
                 if (ele3.children && ele3.children.length != 0) {
                     const level4D = ele3.children
                     lwc.level4_vertical_line[index2][index3] = {
-                        width: 3 + 'px',
                         height: (() => {
                             let h = 0
                             let ele4AllH = 0
@@ -618,7 +547,7 @@ const calculatedLineWidth = () => {
             })
 
             // level4 水平线条
-            level3D.forEach((e, index3) => {
+            level3D?.forEach((e, index3) => {
                 const level4D = e.children
                 let ele4AllH = 0
                 let temp = 0
@@ -649,27 +578,24 @@ const calculatedLineWidth = () => {
                             return ele4AllH + (() => {
                                 return temp2[index4 - 1] || 0
                             })() + 'px'
-                        })(),
-                        height: 3 + 'px'
+                        })()
                     }
                 })
             })
 
 
             // level5 垂直线条
-            level3D.forEach((ele3, index3) => {
+            level3D?.forEach((ele3, index3) => {
                 ele3.children?.forEach((ele4, index4) => {
                     ele4.children?.forEach((ele5, index5) => {
-                        // if (index2 === 0) console.log(ele5)
                         lwc.level5_vertical_line[index2] === undefined && (() => lwc.level5_vertical_line[index2] = [])()
                         lwc.level5_vertical_line[index2][index3] === undefined && (() => lwc.level5_vertical_line[index2][index3] = [])()
                         lwc.level5_vertical_line[index2][index3][index4] = {
-                            width: '3px',
                             height: (() => {
-                                let ele5AllH = -40
+                                let ele5AllH = 0
                                 ele4.children?.forEach((ele5, index5) => {
                                     ele5AllH += 20
-                                    ele5AllH += convertWHToInt(ele5.height || 40)
+                                    if (ele4.children.length - 1 !== index5) ele5AllH += convertWHToInt(ele5.height || 40)
                                 })
                                 return ele5AllH + 'px'
                             })()
@@ -679,7 +605,7 @@ const calculatedLineWidth = () => {
             })
 
             // level5 水平线条
-            level3D.forEach((ele3, index3) => {
+            level3D?.forEach((ele3, index3) => {
                 ele3.children?.forEach((ele4, index4) => {
                     let ele5AllH = 0
                     let temp = 0
@@ -688,7 +614,6 @@ const calculatedLineWidth = () => {
                         lwc.level5_horizontal_line[index2][index3] === undefined && (() => lwc.level5_horizontal_line[index2][index3] = [])()
                         lwc.level5_horizontal_line[index2][index3][index4] === undefined && (() => lwc.level5_horizontal_line[index2][index3][index4] = [])()
                         lwc.level5_horizontal_line[index2][index3][index4][index5] = {
-                            height: '3px',
                             top: (() => {
                                 ele5AllH += 20
                                 ele5AllH += temp
@@ -702,7 +627,7 @@ const calculatedLineWidth = () => {
                         level5NodeW.push(ele5.width || 105)
                     })
                 })
-            })
+            });
 
 
             // 二级目录水平线长度自动分布
@@ -711,13 +636,16 @@ const calculatedLineWidth = () => {
             // width: <120 set: 120
             // width: 120 <= ~ < 220 set: 200
             // width: >=220 set: 300
-            let max = Math.max(...level5NodeW)
-            let value = 120
-            if (max < 120) value = 120
-            else if (max >= 120 && max < 220) value = 200
-            else if (max >= 220) value = 300
+            (() => {
+                let max = Math.max(...level5NodeW)
+                let value = 120
+                if (max < 120) value = 120
+                else if (max >= 120 && max < 220) value = 200
+                else if (max >= 220) value = 300
 
-            lwc.title_horizontal_line.width = parseInt(lwc.title_horizontal_line.width) + value + 'px'
+                if (d.children.length === 1) value = 0
+                lwc.title_horizontal_line.width = parseInt(lwc.title_horizontal_line.width) + value + 'px'
+            })()
         })
     }
 }
@@ -985,6 +913,7 @@ const changeData = (val) => {
     }
 
     // 位置不能变，先生成节点状态，主要是为后面计算线宽时宽高自适应
+    level2Datas.value = data.value.children
     generateNodeState()
     calculatedLineWidth()
     calculatedNodeCursor()
@@ -1000,15 +929,15 @@ const successMessage = (msg) => {
 // 导出png图片
 const exportPng = () => {
     const node = document.querySelector('.container');
-    node.style.overflow = 'unset'
-
     const box = node.style.boxShadow
-    node.style.boxShadow = 'none'
-
     const dragAndZoom = document.querySelector('.dragAndZoom')
-    dragAndZoom.style.transform = 'scale(1) translate(0px, 0px)'
+    const nodeSt = nodeStyle.value[1]
+    const doubleIncrement = convertWHToInt(nodeSt[0].width + nodeSt[nodeSt.length - 1].width) + 400
+    const mainWidth = dragAndZoom.scrollWidth + doubleIncrement, mainHeight = dragAndZoom.scrollHeight;
 
-    domtoimage.toBlob(node, { bgcolor: '#F1F8FE' }).then(function (blob) {
+    dragAndZoom.style.transform = `scale(1) translate(0px, 0px)`
+
+    domtoimage.toBlob(dragAndZoom, { bgcolor: '#F1F8FE', width: mainWidth, height: mainHeight }).then(function (blob) {
         saveAs(blob, 'file.png');
         successMessage('Export successfully.');
         node.style.overflow = 'hidden'
