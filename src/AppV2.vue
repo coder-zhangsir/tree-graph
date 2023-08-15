@@ -974,7 +974,7 @@ onMounted(() => {
 })
 
 </script>
-<style>
+<style lang="less">
 /* tooltip animation */
 .singleton-tooltip {
     transition: transform 0.3s cubic-bezier(.23, 1, .32, 1);
