@@ -195,12 +195,12 @@
     </el-tooltip>
 
     <!-- Test ChangeData -->
-    <el-button round size="large" type="primary" @click.once="() => { changeData() }">ChangeData</el-button>
+    <!-- <el-button round size="large" type="primary" @click.once="() => { changeData() }">ChangeData</el-button> -->
 </template>
 <script setup>
 import { onMounted, ref } from 'vue';
-import { _data } from './assets/help/localData.js'
-import './assets/css/tree.css'
+import { _data } from './help/localData.js'
+import './css/tree.css'
 import axios from 'axios'
 /* in ES 6 */
 import domtoimage from 'dom-to-image';
@@ -1021,4 +1021,4 @@ onMounted(() => {
 .singleton-tooltip {
     transition: transform 0.3s cubic-bezier(.23, 1, .32, 1);
 }
-</style>
+</style>./help/localData.js
