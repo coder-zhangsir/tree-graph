@@ -1,0 +1,703 @@
+{
+    "id": "ce155969-56b6-4430-81bd-08db748ebf22",
+    "label": "中国集团公司",
+    "key": null,
+    "depLevel": 1,
+    "children": [
+        {
+            "id": "3e3575e6-75aa-4d04-81be-08db748ebf22",
+            "label": "第2层部门",
+            "key": null,
+            "depLevel": 2,
+            "children": [
+                {
+                    "id": "39d53a7e-3df7-4328-81bf-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "dec8832f-ac52-4a66-81c0-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "dec8832f-ac52-4a66-81c0-08db748ebf22",
+                                    "label": "第五层部门",
+                                    "key": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cc0ddca7-4279-4810-81c1-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "81d2ab38-8b29-493e-81c2-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "25cf1a9a-9311-4d24-81c3-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "ce31ca94-3651-4fe5-81c4-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "88a63f92-2603-4ede-81c5-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "7acfe0a7-a8cf-4fc2-81c6-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "95cd5de8-09b6-4fad-81c7-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "628ae32e-56d7-412b-81c8-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "f240699f-ea95-4cd8-81c9-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "9dcb48ab-3c72-4f27-81ca-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "e4d1d34a-b16a-456f-81cb-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "e156f53a-c541-423e-81cc-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "72f6737e-91e6-401f-81cd-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "8d22647d-25e1-441a-81ce-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "2ac58f80-9868-4095-81cf-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "a2af3f8f-d8f8-4164-81d0-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "631f62b7-7cd1-42c1-81d1-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7502a220-8e96-422a-81d2-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "cae6f988-cd10-487f-81d3-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "b854f91a-f100-4599-81d4-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "3cbeb5e9-9e6f-43f2-81d5-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "a9af26c0-c40a-47bc-81d6-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "a2842a31-b615-4915-81d7-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "272d4212-f28c-4b9c-81d8-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "c892023a-d8ed-4e53-81d9-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "261856db-1284-4b33-81da-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "fcd4ea6c-5fcb-4456-81db-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "545bd613-f988-494e-81dc-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "957d3152-15e8-43f4-81dd-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "589af557-b91a-437f-81de-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "4d5a7cfc-1828-4c1f-81df-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "23868dba-7694-4c3d-81e0-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1789d7ee-3711-4f7b-81e1-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": "6cfdc8f5-406f-48fb-81e2-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "0f0ce111-302c-44e6-81e3-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "ba8e1e69-d160-4651-81e4-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": [
+                                        {
+                                            "id": "fdccda4b-3c8e-4c44-81e5-08db748ebf22",
+                                            "label": "第6层部门",
+                                            "key": null,
+                                            "depLevel": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "id": "961ea038-eaf8-41cc-81e6-08db748ebf22",
+                                            "label": "第6层部门",
+                                            "key": null,
+                                            "depLevel": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "5f329a9d-1a1c-4e49-81e7-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": [
+                                        {
+                                            "id": "3d863242-238e-4810-81e8-08db748ebf22",
+                                            "label": "第6层部门",
+                                            "key": null,
+                                            "depLevel": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "id": "390e8ac6-d6d7-4887-81e9-08db748ebf22",
+                                            "label": "第6层部门",
+                                            "key": null,
+                                            "depLevel": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "id": "0fd08c4f-06a8-43e9-81ea-08db748ebf22",
+                                            "label": "第6层部门",
+                                            "key": null,
+                                            "depLevel": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "eb0e812a-e27a-4fb2-81eb-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "e0679dc8-adf3-494e-81ec-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "53b1e0b5-e963-4a4b-81ed-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "fe615031-5241-4937-81ee-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "e7825f34-b23f-47d9-81ef-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "53620647-4961-4478-81f0-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "7522f1b9-c14f-4d4c-81f1-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "07c5160a-1402-4da7-81f2-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "f2293d9c-2284-4e37-81f3-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "e40b1813-56f7-4f64-81f4-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "d238c5dd-0dd4-485d-81f5-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "d0b98db9-cf9a-43bb-81f6-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "69be9032-1a61-4ce7-81f7-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "e92c120b-f674-4017-81f8-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "ead86c9b-58ec-401d-81f9-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "d2d42f5d-b832-4ec1-81fa-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "01037764-cb16-4968-81fb-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "8a36e067-14d7-41c7-81fc-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "3676a72f-6b44-4061-81fd-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "6f9ab037-7147-46a8-81fe-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": "77e4b3e5-2627-4f82-81ff-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "2d748da0-a19c-4d58-8200-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "fd799b55-4eb3-460f-8201-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "0ef9987c-2d00-4e44-8202-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "3d4459a0-a3a4-48e2-8203-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3f970382-d5fa-4684-8204-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "f4c9ffd5-b735-4598-8205-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "b6395080-c5c2-44c3-8206-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        },
+                        {
+                            "id": "c05269de-176b-4b23-8207-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "945d0f9c-36d9-41a3-8208-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "9fffff7b-ed3f-42ae-8209-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ea54717a-9425-464d-820a-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "ac8f00af-f21c-4033-820b-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "b9abeee4-22ef-4c8c-820c-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "01147c5c-6b6c-412f-820d-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "f0510691-d2d9-4d9a-820e-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": "0b2361f8-480e-4ffb-820f-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": [
+                        {
+                            "id": "e7163155-b28b-4c74-8210-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": [
+                                {
+                                    "id": "473691db-3b1c-492e-8211-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "3326d361-8d21-478e-8212-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                },
+                                {
+                                    "id": "6d39549c-3664-4a9f-8213-08db748ebf22",
+                                    "label": "第5层部门",
+                                    "key": null,
+                                    "depLevel": 5,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6f24d693-1dff-4920-8214-08db748ebf22",
+                            "label": "第4层部门",
+                            "key": null,
+                            "depLevel": 4,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4b14560b-88c6-4c8a-8215-08db748ebf22",
+            "label": "第2层部门",
+            "key": null,
+            "depLevel": 2,
+            "children": [
+                {
+                    "id": "2a41433b-6c7e-422b-8216-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                },
+                {
+                    "id": "6229fe6a-d46e-42a4-8217-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                },
+                {
+                    "id": "7918f069-0b40-4f35-8218-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                },
+                {
+                    "id": "2dd1a83d-bfde-492f-8219-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                },
+                {
+                    "id": "454d31b9-8870-49aa-821a-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                },
+                {
+                    "id": "2be738dd-744f-4958-821b-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                },
+                {
+                    "id": "9cb7db9e-eae4-4592-821c-08db748ebf22",
+                    "label": "第3层部门",
+                    "key": null,
+                    "depLevel": 3,
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

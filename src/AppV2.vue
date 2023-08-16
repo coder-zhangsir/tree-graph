@@ -4,12 +4,14 @@
         <div class="dragAndZoom">
             <div v-if="data && data.id != undefined" class="root" :style="[nodeStyle[0]]">
 
-                <div v-if="enableMask" class="root large mask" :style="[nodeStyle[0]]"
+                <div v-if="enableMask" class="root large mask-1" :style="[nodeStyle[0]]"
                     @click="nodeActiveState[0] = !nodeActiveState[0]" @mouseenter="(e) => {
-                        buttonRef = e.currentTarget;
-                        visible = true;
-                        updateTooltip(data.value);
-                        showTooltipTimeout();
+                        if (data.value) {
+                            buttonRef = e.currentTarget;
+                            visible = true;
+                            updateTooltip(data.value);
+                            showTooltipTimeout();
+                        }
                     }" @mouseleave="hideTooltipTimeout">
                     <img v-if="data.img" :src="data.img" alt="">
                     <h3 v-if="data.label">{{ data.label }}</h3>
@@ -27,13 +29,15 @@
                             <!-- level2 element -->
                             <div v-if="data.children[index] && data.children[index].id != undefined" class="level2"
                                 :style="[nodeStyle[1][index]]">
-                                <div v-if="enableMask" class="level2 medium mask"
+                                <div v-if="enableMask" class="level2 medium mask-2"
                                     :style="[nodeStyle[1][index], { left: 0 }]"
                                     @click="nodeActiveState[1][index] = !nodeActiveState[1][index]" @mouseenter="(e) => {
-                                        buttonRef = e.currentTarget;
-                                        visible = true;
-                                        updateTooltip(data.children[index].value);
-                                        showTooltipTimeout();
+                                        if (data.children[index].value) {
+                                            buttonRef = e.currentTarget;
+                                            visible = true;
+                                            updateTooltip(data.children[index].value);
+                                            showTooltipTimeout();
+                                        }
                                     }" @mouseleave="hideTooltipTimeout">
                                     <img v-if="data.children[index].img" :src="data.children[index].img" alt="">
                                     <h3 v-if="data.children[index].label">{{ data.children[index].label }}</h3>
@@ -50,15 +54,18 @@
                                         :style="[lineWidthConfig.level3_horizontal_line[index][indexTwo]]">
                                         <!-- level3 element -->
                                         <div class="level3" :style="[nodeStyle[2][index][indexTwo]]">
-                                            <div v-if="enableMask" class="small mask level3"
+                                            <div v-if="enableMask" class="small mask-3 level3"
                                                 :style="[nodeStyle[2][index][indexTwo]]" @click="() => {
                                                     nodeActiveState[2][index][indexTwo] = !nodeActiveState[2][index][indexTwo]
                                                     calculatedLineWidth()
                                                 }" @mouseenter="(e) => {
-    buttonRef = e.currentTarget;
-    visible = true;
-    updateTooltip(data.children[index].children[indexTwo].value);
-    showTooltipTimeout();
+    if (data.children[index].children[indexTwo].value) {
+        buttonRef = e.currentTarget;
+        visible = true;
+        updateTooltip(data.children[index].children[indexTwo].value);
+        showTooltipTimeout();
+    }
+
 }" @mouseleave="hideTooltipTimeout">
                                                 <img v-if="data.children[index].children[indexTwo].img"
                                                     :src="data.children[index].children[indexTwo].img" alt="">
@@ -81,16 +88,19 @@
                                                     <!-- level4 element -->
                                                     <div class="level4" style="border: 0"
                                                         :style="[nodeStyle[3][index][indexTwo][indexThree]]">
-                                                        <div v-if="enableMask" class="small mask level4"
+                                                        <div v-if="enableMask" class="small mask-4 level4"
                                                             :style="[nodeStyle[3][index][indexTwo][indexThree], { top: 0 }]"
                                                             @click="() => {
                                                                 nodeActiveState[3][index][indexTwo][indexThree] = !nodeActiveState[3][index][indexTwo][indexThree]
                                                                 calculatedLineWidth()
                                                             }" @mouseenter="(e) => {
-    buttonRef = e.currentTarget;
-    visible = true;
-    updateTooltip(data.children[index].children[indexTwo].children[indexThree].value);
-    showTooltipTimeout();
+    if (data.children[index].children[indexTwo].children[indexThree].value) {
+        buttonRef = e.currentTarget;
+        visible = true;
+        updateTooltip(data.children[index].children[indexTwo].children[indexThree].value);
+        showTooltipTimeout();
+    }
+
 }" @mouseleave="hideTooltipTimeout">
                                                             <img v-if="data.children[index].children[indexTwo].children[indexThree].img"
                                                                 :src="data.children[index].children[indexTwo].children[indexThree].img"
@@ -109,7 +119,7 @@
 
                                                         <!-- level5 area -->
                                                         <!-- level5-vertical-line -->
-                                                        <div v-if="data.children[index].children[indexTwo].children[indexThree].children && nodeActiveState[3][index][indexTwo][indexThree]"
+                                                        <div v-if="data.children[index].children[indexTwo].children[indexThree].children && data.children[index].children[indexTwo].children[indexThree].children.length !== 0 && nodeActiveState[3][index][indexTwo][indexThree]"
                                                             class="level5-vertical-line"
                                                             :style="[lineWidthConfig.level5_vertical_line[index][indexTwo][indexThree]]">
                                                             <!-- level5-horizontal-line -->
@@ -119,13 +129,15 @@
                                                                 <!-- level5 element -->
                                                                 <div class="level5"
                                                                     :style="[nodeStyle[4][index][indexTwo][indexThree][indexFour], { border: 0 }]">
-                                                                    <div v-if="enableMask" class="small mask level5"
+                                                                    <div v-if="enableMask" class="small mask-5 level5"
                                                                         :style="[nodeStyle[4][index][indexTwo][indexThree][indexFour], { top: 0 }]"
                                                                         @mouseenter="(e) => {
-                                                                            buttonRef = e.currentTarget;
-                                                                            visible = true;
-                                                                            updateTooltip(data.children[index].children[indexTwo].children[indexThree].children[indexFour].value);
-                                                                            showTooltipTimeout();
+                                                                            if (data.children[index].children[indexTwo].children[indexThree].children[indexFour].value) {
+                                                                                buttonRef = e.currentTarget;
+                                                                                visible = true;
+                                                                                updateTooltip(data.children[index].children[indexTwo].children[indexThree].children[indexFour].value);
+                                                                                showTooltipTimeout();
+                                                                            }
                                                                         }" @mouseleave="hideTooltipTimeout">
                                                                         <img v-if="data.children[index].children[indexTwo].children[indexThree].children[indexFour].img"
                                                                             :src="data.children[index].children[indexTwo].children[indexThree].children[indexFour].img"
@@ -187,14 +199,13 @@
 </template>
 <script setup>
 import { onMounted, ref } from 'vue';
-import { _data } from './assets/help/localData'
+import { _data } from './assets/help/localData.js'
 import './assets/css/tree.css'
 import axios from 'axios'
 /* in ES 6 */
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 import Panzoom from '@panzoom/panzoom';
-
 
 
 const data = ref(_data)
@@ -288,51 +299,63 @@ const generateNodeState = () => {
     obj[0] = true
 
     // level2
+    if (!level1) return
     const level2 = level1.children
-    level2?.forEach((ele, index2) => {
-        // 节点下二层数组不存在时
-        obj[1] === undefined && (() => obj[1] = [])()
+    if (level2 && level2.length !== 0) {
+        level2?.forEach((ele, index2) => {
+            // 节点下二层数组不存在时
+            obj[1] === undefined && (() => obj[1] = [])()
 
-        obj[1][index2] = true
-
-
-        // level3
-        const level3 = ele.children
-        level3?.forEach((ele, index3) => {
-            // 节点下三层数组不存在时
-            obj[2] === undefined && (() => obj[2] = [])()
-            obj[2][index2] === undefined && (() => obj[2][index2] = [])()
-
-            obj[2][index2][index3] = true
+            obj[1][index2] = true
 
 
-            // level4
-            const level4 = ele.children
-            level4?.forEach((ele, index4) => {
-                // 节点下四层数组不存在时
-                obj[3] === undefined && (() => obj[3] = [])()
-                obj[3][index2] === undefined && (() => obj[3][index2] = [])()
-                obj[3][index2][index3] === undefined && (() => obj[3][index2][index3] = [])()
+            // level3
+            const level3 = ele.children
+            if (level3 && level3.length !== 0) {
+                level3?.forEach((ele, index3) => {
+                    // 节点下三层数组不存在时
+                    obj[2] === undefined && (() => obj[2] = [])()
+                    obj[2][index2] === undefined && (() => obj[2][index2] = [])()
 
-                obj[3][index2][index3][index4] = true
+                    obj[2][index2][index3] = true
 
 
-                // level5
-                const level5 = ele.children
-                level5?.forEach((ele, index5) => {
-                    // 节点下五层数组不存在时
-                    obj[4] === undefined && (() => obj[4] = [])()
-                    obj[4][index2] === undefined && (() => obj[4][index2] = [])()
-                    obj[4][index2][index3] === undefined && (() => obj[4][index2][index3] = [])()
-                    obj[4][index2][index3][index4] === undefined && (() => obj[4][index2][index3][index4] = [])()
+                    // level4
+                    const level4 = ele.children
+                    if (level4 && level4.length !== 0) {
+                        level4?.forEach((ele, index4) => {
+                            // 节点下四层数组不存在时
+                            obj[3] === undefined && (() => obj[3] = [])()
+                            obj[3][index2] === undefined && (() => obj[3][index2] = [])()
+                            obj[3][index2][index3] === undefined && (() => obj[3][index2][index3] = [])()
 
-                    obj[4][index2][index3][index4][index5] = true
+                            obj[3][index2][index3][index4] = true
+
+
+                            // level5
+                            const level5 = ele.children
+                            if (level5 && level5.length !== 0) {
+                                level5?.forEach((ele5, index5) => {
+                                    // console.log(ele5)
+                                    // 节点下五层数组不存在时
+                                    obj[4] === undefined && (() => obj[4] = [])()
+                                    obj[4][index2] === undefined && (() => obj[4][index2] = [])()
+                                    obj[4][index2][index3] === undefined && (() => obj[4][index2][index3] = [])()
+                                    obj[4][index2][index3][index4] === undefined && (() => obj[4][index2][index3][index4] = [])()
+
+                                    obj[4][index2][index3][index4][index5] = true
+                                })
+                            }
+
+                        })
+                    }
+
                 })
-            })
-        })
-    })
+            }
 
-    // console.log(obj)
+        })
+    }
+
     nodeActiveState.value = obj
 }
 generateNodeState()
@@ -485,7 +508,7 @@ const calculatedLineWidth = () => {
                         })
                     }
                     checkLevel4NodeExists()
-                    
+
                     return (ele3AllH[ele3AllH.length - 2] || 20) + 'px'
                 })()
             }
@@ -552,35 +575,38 @@ const calculatedLineWidth = () => {
                 let ele4AllH = 0
                 let temp = 0
                 let temp2 = []
-                level4D?.forEach((ele4, index4) => {
-                    lwc.level4_horizontal_line[index2] === undefined && (() => lwc.level4_horizontal_line[index2] = [])()
-                    lwc.level4_horizontal_line[index2][index3] === undefined && (() => lwc.level4_horizontal_line[index2][index3] = [])()
-                    lwc.level4_horizontal_line[index2][index3][index4] = {
-                        top: (() => {
-                            ele4AllH += 20
-                            if (index4 !== 0) {
-                                ele4AllH += temp
-                            }
+                if (level4D && level4D.length !== 0) {
+                    level4D?.forEach((ele4, index4) => {
+                        lwc.level4_horizontal_line[index2] === undefined && (() => lwc.level4_horizontal_line[index2] = [])()
+                        lwc.level4_horizontal_line[index2][index3] === undefined && (() => lwc.level4_horizontal_line[index2][index3] = [])()
+                        lwc.level4_horizontal_line[index2][index3][index4] = {
+                            top: (() => {
+                                ele4AllH += 20
+                                if (index4 !== 0) {
+                                    ele4AllH += temp
+                                }
 
-                            // ele4AllH += temp2
+                                // ele4AllH += temp2
 
-                            temp = convertWHToInt(ele4.height || 40)
+                                temp = convertWHToInt(ele4.height || 40)
 
-                            let ele5AllH = 0
-                            ele4.children?.forEach((ele5, index5) => {
-                                if (state[3][index2][index3][index4] === false) return
-                                ele5AllH += 20
-                                ele5AllH += convertWHToInt(ele5.height || 40)
-                            })
-                            temp2[index4] = (temp2[index4 - 1] || 0) + ele5AllH
+                                let ele5AllH = 0
+                                ele4.children?.forEach((ele5, index5) => {
+                                    if (state[3][index2][index3][index4] === false) return
+                                    ele5AllH += 20
+                                    ele5AllH += convertWHToInt(ele5.height || 40)
+                                })
+                                temp2[index4] = (temp2[index4 - 1] || 0) + ele5AllH
 
 
-                            return ele4AllH + (() => {
-                                return temp2[index4 - 1] || 0
-                            })() + 'px'
-                        })()
-                    }
-                })
+                                return ele4AllH + (() => {
+                                    return temp2[index4 - 1] || 0
+                                })() + 'px'
+                            })()
+                        }
+                    })
+                }
+
             })
 
 
@@ -668,7 +694,7 @@ const calculatedNodeCursor = () => {
     // [3][~][~][~]: {}  -> level4
 
     // level1 -> level2
-    if (state[0]) {
+    if (state[0] && state[1]) {
         if (state[1].length != 0) {
             node[0] === undefined && (() => node[0] = {})()
             node[0].cursor = 'pointer'
@@ -914,6 +940,20 @@ const changeData = (val) => {
 
     // 位置不能变，先生成节点状态，主要是为后面计算线宽时宽高自适应
     level2Datas.value = data.value.children
+    lineWidthConfig.value = {
+        title_vertical_line: {},
+        title_horizontal_line: {},
+        level2_vertical_line: {},
+        // level2_horizontal_line: {},
+        level3_vertical_line: [],
+        level3_horizontal_line: [],
+        level4_vertical_line: [],
+        level4_horizontal_line: [],
+        level5_vertical_line: [],
+        level5_horizontal_line: [],
+    }
+    nodeActiveState.value = []
+    nodeStyle.value = []
     generateNodeState()
     calculatedLineWidth()
     calculatedNodeCursor()
@@ -947,11 +987,11 @@ const exportPng = () => {
 
 
 // 网络请求
-const requestNetworkData = () => {
-    return axios.get('/api/tree/data').then((res) => {
+const requestNetworkData = (url) => {
+    return axios.get(url).then((res) => {
         // data 如果是 Object 而非 Array, 那么在查找节点时应当在外面套一层数组结构
-        res.status === '200' && console.log(res.data)
-        if (res.status === '200') {
+        if (res.status === 200) {
+            console.log(res.data)
             !Array.isArray(res.data) && changeData(res.data)
         }
     })
@@ -971,6 +1011,8 @@ onMounted(() => {
         if (!event.shiftKey) return
         panzoom.zoomWithWheel(event)
     })
+
+    // requestNetworkData('./src/assets/help/testData.json')
 })
 
 </script>

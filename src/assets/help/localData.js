@@ -266,141 +266,141 @@ let _data = {
                 }
             ]
         },
-        {
-            id: 11,
-            label: '部门B',
-            value: '部门B11',
-            children: [
-                {
-                    id: 110,
-                    label: '成员1',
-                    value: '成员110',
-                    height: '65px'
-                },
-                {
-                    id: 111,
-                    label: '成员2',
-                    value: '成员111',
-                    height: '80px',
-                    children: [
-                        {
-                            id: 140,
-                            label: '成员6',
-                            value: '成员163',
-                            backgroundColor: '#FFCCCC',
-                            height: 100,
-                            width: 145
-                        },
-                        {
-                            id: 141,
-                            label: '成员6',
-                            value: '成员164',
-                            width: 120,
-                            height: '65'
-                        }
-                    ]
-                },
-                {
-                    id: 112,
-                    label: '成员3',
-                    value: '成员112',
-                },
-                {
-                    id: 113,
-                    label: '成员4',
-                    value: '成员113',
-                },
-                {
-                    id: 114,
-                    label: '成员5',
-                    value: '成员114',
-                },
-            ]
-        },
-        {
-            id: 12,
-            label: '部门C',
-            value: '部门C12',
-            width: 120,
-            height: 170,
-            backgroundColor: '#55B5A6',
-            children: [
-                {
-                    id: 120,
-                    label: '成员1',
-                    value: '成员120',
-                    height: 50,
-                    children: [
-                        {
-                            id: 140,
-                            label: '成员1',
-                            value: '成员140',
-                            children: [
-                                {
-                                    id: 140,
-                                    label: '成员1',
-                                    value: '成员140',
-                                },
-                                {
-                                    id: 140,
-                                    label: '成员1',
-                                    value: '成员140',
-                                },
-                                {
-                                    id: 140,
-                                    label: '成员1',
-                                    value: '成员140',
-                                }
-                            ]
-                        },
-                        {
-                            id: 140,
-                            label: '成员1',
-                            value: '成员140',
-                            children: [
-                                {
-                                    id: 140,
-                                    label: '成员1',
-                                    value: '成员140',
-                                },
-                                {
-                                    id: 140,
-                                    label: '成员1',
-                                    value: '成员140',
-                                    height: '100'
-                                },
-                                {
-                                    id: 140,
-                                    label: '成员1',
-                                    value: '成员140',
-                                }
-                            ]
-                        },
-                        {
-                            id: 140,
-                            label: '成员1',
-                            value: '成员140',
-                        }
-                    ]
-                },
-                {
-                    id: 121,
-                    label: '成员2',
-                    value: '成员121',
-                    height: 80
-                },
-                {
-                    id: 122,
-                    label: '成员3',
-                    value: '成员122',
-                },
-                {
-                    id: 123,
-                    label: '成员4',
-                    value: '成员123',
-                }
-            ]
-        }
+        // {
+        //     id: 11,
+        //     label: '部门B',
+        //     value: '部门B11',
+        //     children: [
+        //         {
+        //             id: 110,
+        //             label: '成员1',
+        //             value: '成员110',
+        //             height: '65px'
+        //         },
+        //         {
+        //             id: 111,
+        //             label: '成员2',
+        //             value: '成员111',
+        //             height: '80px',
+        //             children: [
+        //                 {
+        //                     id: 140,
+        //                     label: '成员6',
+        //                     value: '成员163',
+        //                     backgroundColor: '#FFCCCC',
+        //                     height: 100,
+        //                     width: 145
+        //                 },
+        //                 {
+        //                     id: 141,
+        //                     label: '成员6',
+        //                     value: '成员164',
+        //                     width: 120,
+        //                     height: '65'
+        //                 }
+        //             ]
+        //         },
+        //         {
+        //             id: 112,
+        //             label: '成员3',
+        //             value: '成员112',
+        //         },
+        //         {
+        //             id: 113,
+        //             label: '成员4',
+        //             value: '成员113',
+        //         },
+        //         {
+        //             id: 114,
+        //             label: '成员5',
+        //             value: '成员114',
+        //         },
+        //     ]
+        // },
+        // {
+        //     id: 12,
+        //     label: '部门C',
+        //     value: '部门C12',
+        //     width: 120,
+        //     height: 170,
+        //     backgroundColor: '#55B5A6',
+        //     children: [
+        //         {
+        //             id: 120,
+        //             label: '成员1',
+        //             value: '成员120',
+        //             height: 50,
+        //             children: [
+        //                 {
+        //                     id: 140,
+        //                     label: '成员1',
+        //                     value: '成员140',
+        //                     children: [
+        //                         {
+        //                             id: 140,
+        //                             label: '成员1',
+        //                             value: '成员140',
+        //                         },
+        //                         {
+        //                             id: 140,
+        //                             label: '成员1',
+        //                             value: '成员140',
+        //                         },
+        //                         {
+        //                             id: 140,
+        //                             label: '成员1',
+        //                             value: '成员140',
+        //                         }
+        //                     ]
+        //                 },
+        //                 {
+        //                     id: 140,
+        //                     label: '成员1',
+        //                     value: '成员140',
+        //                     children: [
+        //                         {
+        //                             id: 140,
+        //                             label: '成员1',
+        //                             value: '成员140',
+        //                         },
+        //                         {
+        //                             id: 140,
+        //                             label: '成员1',
+        //                             value: '成员140',
+        //                             height: '100'
+        //                         },
+        //                         {
+        //                             id: 140,
+        //                             label: '成员1',
+        //                             value: '成员140',
+        //                         }
+        //                     ]
+        //                 },
+        //                 {
+        //                     id: 140,
+        //                     label: '成员1',
+        //                     value: '成员140',
+        //                 }
+        //             ]
+        //         },
+        //         {
+        //             id: 121,
+        //             label: '成员2',
+        //             value: '成员121',
+        //             height: 80
+        //         },
+        //         {
+        //             id: 122,
+        //             label: '成员3',
+        //             value: '成员122',
+        //         },
+        //         {
+        //             id: 123,
+        //             label: '成员4',
+        //             value: '成员123',
+        //         }
+        //     ]
+        // }
     ]
 }
 

@@ -1,4 +1,61 @@
-/* CSS General custom style configuration */
+/* 默认全局变量 */
+/* ----------------------------------------------- */
+/* 全局自定义化样式配置 */
+#global-config {
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 2px;
+}
+#global-config .img {
+  width: 40%;
+}
+/* 层级自定义化样式配置 */
+#level1-config {
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
+}
+#level1-config .img {
+  width: 50%;
+}
+#level2-config {
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
+}
+#level2-config .img {
+  width: 40%;
+}
+#level3-config {
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
+}
+#level3-config .img {
+  width: 40%;
+}
+#level4-config {
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 2px;
+}
+#level4-config .img {
+  width: 40%;
+}
+#level5-config {
+  background-color: white;
+  border-color: black;
+  color: black;
+  border-width: 2px;
+}
+#level5-config .img {
+  width: 40%;
+}
 /* ---------------------------------------------------------------- */
 * {
   box-sizing: border-box;
@@ -26,7 +83,6 @@ body {
   height: 100%;
 }
 .root {
-  background-color: black;
   color: #FFFFFF;
   width: 240px;
   height: 40px;
@@ -34,7 +90,18 @@ body {
   justify-content: center;
   align-items: center;
   cursor: default;
+  border-width: 2px;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
   position: relative;
+}
+.root .img {
+  width: 40%;
+}
+.root .img {
+  width: 50%;
 }
 .root .title-vertical-line {
   position: absolute;
@@ -58,7 +125,6 @@ body {
   height: 30px;
 }
 .level2 {
-  background-color: black;
   color: #FFFFFF;
   width: 200px;
   height: 40px;
@@ -67,9 +133,20 @@ body {
   align-items: center;
   border-radius: 5px;
   cursor: default;
+  border-width: 2px;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
   position: absolute;
   top: 100%;
   left: -100px;
+}
+.level2 .img {
+  width: 40%;
+}
+.level2 .img {
+  width: 40%;
 }
 .level2 .level3-vertical-line {
   position: absolute;
@@ -85,7 +162,6 @@ body {
   height: 3px;
 }
 .level3 {
-  background-color: black;
   color: #FFFFFF;
   width: 105px;
   height: 40px;
@@ -94,9 +170,20 @@ body {
   align-items: center;
   border-radius: 5px;
   cursor: default;
+  border-width: 2px;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
   position: absolute;
   left: 100%;
   top: -8px;
+}
+.level3 .img {
+  width: 40%;
+}
+.level3 .img {
+  width: 40%;
 }
 .level3 .level4-vertical-line {
   position: absolute;
@@ -122,9 +209,19 @@ body {
   align-items: center;
   border-radius: 5px;
   cursor: default;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 2px;
   position: absolute;
   left: 100%;
   top: -8px;
+}
+.level4 .img {
+  width: 40%;
+}
+.level4 .img {
+  width: 40%;
 }
 .level4 .level5-vertical-line {
   position: absolute;
@@ -142,7 +239,6 @@ body {
 .level5 {
   border: 1px solid black;
   background-color: #FFFFFF;
-  color: black;
   width: 105px;
   height: 40px;
   display: flex;
@@ -150,9 +246,21 @@ body {
   align-items: center;
   border-radius: 5px;
   cursor: default;
+  background-color: black;
+  color: white;
+  background-color: white;
+  border-color: black;
+  color: black;
+  border-width: 2px;
   position: absolute;
   left: 100%;
   top: -8px;
+}
+.level5 .img {
+  width: 40%;
+}
+.level5 .img {
+  width: 40%;
 }
 .export {
   position: fixed;
@@ -171,23 +279,172 @@ body {
   width: 100px;
   right: 0;
 }
-.mask {
+.mask-common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
+}
+.mask-common img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.mask {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 2px;
 }
 .mask img {
   width: 40%;
   border-radius: 50%;
   margin-bottom: 8px;
 }
-.mask p {
-  white-space: nowrap;
+.mask .img {
+  width: 40%;
+}
+.mask-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 2px;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
+}
+.mask-1 img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.mask-1 .img {
+  width: 40%;
+}
+.mask-1 .img {
+  width: 50%;
+}
+.mask-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 2px;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
+}
+.mask-2 img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.mask-2 .img {
+  width: 40%;
+}
+.mask-2 .img {
+  width: 40%;
+}
+.mask-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 2px;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 0px;
+}
+.mask-3 img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.mask-3 .img {
+  width: 40%;
+}
+.mask-3 .img {
+  width: 40%;
+}
+.mask-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-width: 2px;
+}
+.mask-4 img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.mask-4 .img {
+  width: 40%;
+}
+.mask-4 .img {
+  width: 40%;
+}
+.mask-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  background-color: white;
+  border-color: black;
+  color: black;
+  border-width: 2px;
+}
+.mask-5 img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.mask-5 .img {
+  width: 40%;
+}
+.mask-5 .img {
+  width: 40%;
 }
 .compatibility-html2canvas {
   top: 1px;
